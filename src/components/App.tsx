@@ -1,21 +1,24 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import Navbar from "./common/Navbar";
 
 import logo from "../assets/cloud.png";
 
-const App: React.FC<AppProps> = () => {
+const App: React.FC<AppProps> = ({ applicationName }) => {
   return (
-    <main className="container">
-      <section className="row">
-        <article className="col-sm-12"></article>
-        <article className="col-sm-12">
-          <div className="text-center">
-            <img src={logo} className="" alt="DataVault logo" />
-          </div>
-          <h1 className="text-center">DataVault</h1>
-        </article>
-        <article className="col-sm-12"></article>
-      </section>
-    </main>
+    <BrowserRouter>
+      <Navbar image={logo} applicationName={applicationName} pages={[]} />
+      <main className="container">
+        <section className="row">
+          <article className="col-sm-12 col-md-12 col-lg-12">
+            <div className="text-center">
+              <h1>Welcome to {applicationName}!</h1>
+            </div>
+          </article>
+        </section>
+      </main>
+    </BrowserRouter>
   );
 };
 
