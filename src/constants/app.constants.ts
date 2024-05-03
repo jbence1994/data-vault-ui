@@ -16,6 +16,11 @@ const PROFILES_PAGE: KeyValuePair<string, string> = {
   value: "/profiles",
 };
 
+const PROFILE_PAGE: KeyValuePair<string, string> = {
+  key: "Profile",
+  value: "/profile/:id",
+};
+
 const ERROR_PAGE: KeyValuePair<string, string> = {
   key: "Error",
   value: "/error",
@@ -32,6 +37,7 @@ export {
   APPLICATION_NAME,
   MAIN_PAGE,
   PROFILES_PAGE,
+  PROFILE_PAGE,
   ERROR_PAGE,
   ALL_PATHS,
   NETWORK_ONLY,

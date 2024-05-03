@@ -4,6 +4,20 @@ declare module "*.png";
 
 // Common FC Props types
 
+interface CardProps {
+  title: string;
+  image: string;
+  imageAlt: string;
+  contents: KeyValuePair<number, string>[];
+  onChange: ChangeEventHandler<HTMLInputElement>;
+}
+
+interface FileInputProps {
+  name: string;
+  disabled: boolean;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+}
+
 interface NavbarProps {
   image: string;
   applicationName: string;
@@ -32,7 +46,7 @@ interface ProfileTableProps {
 // Custom data model types
 
 interface Profile {
-  [key: string]: number | string;
+  [key: string]: number | string | undefined;
   id: string;
   firstName: string;
   middleName: string;
