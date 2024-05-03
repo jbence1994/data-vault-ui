@@ -39,7 +39,6 @@ interface MainPageProps extends PageProps {
 }
 
 interface ProfileTableProps {
-  columns: KeyValuePair<string, string>[];
   profiles: Profile[];
 }
 
