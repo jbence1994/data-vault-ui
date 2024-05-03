@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { formatDate } from "../../util/dateFormatter.ts";
 
 const ProfilesTable: React.FC<ProfileTableProps> = ({ columns, profiles }) => {
   return (
@@ -11,6 +12,7 @@ const ProfilesTable: React.FC<ProfileTableProps> = ({ columns, profiles }) => {
             {columns.map((column: KeyValuePair<string, string>) => (
               <th key={column.key}>{column.value}</th>
             ))}
+            <th>Created date time</th>
           </tr>
         </thead>
         <tbody>
@@ -31,6 +33,7 @@ const ProfilesTable: React.FC<ProfileTableProps> = ({ columns, profiles }) => {
                   {profile[column.key]}
                 </td>
               ))}
+              <td>{formatDate(profile.createdDateTime)}</td>
             </tr>
           ))}
         </tbody>

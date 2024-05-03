@@ -8,6 +8,8 @@ import PROFILE from "../../graphql/queries/profileQuery.ts";
 
 import { NETWORK_ONLY } from "../../constants/app.constants.ts";
 
+import { formatDate } from "../../util/dateFormatter.ts";
+
 import noImage from "../../assets/no-image.png";
 
 const ProfilePage: React.FC<PageProps> = () => {
@@ -50,7 +52,6 @@ const ProfilePage: React.FC<PageProps> = () => {
     birthDate,
     phone,
     email,
-    createdDateTime,
   } = profile;
 
   return (
@@ -63,7 +64,10 @@ const ProfilePage: React.FC<PageProps> = () => {
         { key: 2, value: `Date of Birth: ${birthDate}` },
         { key: 3, value: `Phone number: ${phone}` },
         { key: 4, value: `E-mail address: ${email}` },
-        { key: 5, value: `Created date time: ${createdDateTime}` },
+        {
+          key: 5,
+          value: `Created date time: ${formatDate(profile.createdDateTime)}`,
+        },
       ]}
       onChange={handlePhotoUpload}
     />

@@ -24,7 +24,6 @@ const ProfilesPage: React.FC<PageProps> = () => {
     { key: "firstName", value: "First name" },
     { key: "middleName", value: "Middle name" },
     { key: "lastName", value: "Last name" },
-    { key: "createdDateTime", value: "Created date time" },
   ];
 
   return (
