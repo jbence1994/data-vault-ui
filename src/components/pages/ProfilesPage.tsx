@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 
-import ProfilesTable from "../custom/ProfileTable";
+import ProfilesTable from "../custom/ProfilesTable";
 
 import PROFILES from "../../graphql/queries/profilesQuery.ts";
 
