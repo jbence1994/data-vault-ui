@@ -64,11 +64,11 @@ const ProfilePage: React.FC<PageProps> = () => {
       contents={[
         { key: 1, value: `Gender: ${gender ? "Male" : "Female"}` },
         { key: 2, value: `Birth date: ${birthDate}` },
-        { key: 2, value: `Birth place: ${birthPlace}` },
-        { key: 3, value: `Phone number: ${phone}` },
-        { key: 4, value: `E-mail address: ${email}` },
+        { key: 3, value: `Birth place: ${birthPlace}` },
+        { key: 4, value: `Phone number: ${phone}` },
+        { key: 5, value: `E-mail address: ${email}` },
         {
-          key: 5,
+          key: 6,
           value: `Created date time: ${formatDate(profile.createdDateTime)}`,
         },
       ]}
