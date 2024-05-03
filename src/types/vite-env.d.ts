@@ -24,15 +24,9 @@ interface MainPageProps extends PageProps {
   applicationName: string;
 }
 
-interface ProfileTableProps {
-  columns: KeyValuePair<string, string>[];
-  profiles: Profile[];
-}
-
 // Custom data model types
 
 interface Profile {
-  [key: string]: number | string;
   id: string;
   firstName: string;
   middleName: string;
