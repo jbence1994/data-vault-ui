@@ -55,15 +55,15 @@ const ProfilePage: React.FC<PageProps> = () => {
 
   return (
     <Card
-      title={`Név: ${lastName}, ${middleName} ${firstName}`}
+      title={`Full name: ${lastName}, ${middleName} ${firstName}`}
       image={noImage}
       imageAlt={id}
       contents={[
-        { key: 1, value: `Nem: ${gender ? "Férfi" : "Nő"}` },
-        { key: 2, value: `Születési idő: ${birthDate}` },
-        { key: 3, value: `Telefonszám: ${phone}` },
-        { key: 4, value: `E-mail cím: ${email}` },
-        { key: 5, value: `Rögzítés dátuma: ${createdDateTime}` },
+        { key: 1, value: `Gender: ${gender ? "Male" : "Female"}` },
+        { key: 2, value: `Date of Birth: ${birthDate}` },
+        { key: 3, value: `Phone number: ${phone}` },
+        { key: 4, value: `E-mail address: ${email}` },
+        { key: 5, value: `Created date time: ${createdDateTime}` },
       ]}
       onChange={handlePhotoUpload}
     />
