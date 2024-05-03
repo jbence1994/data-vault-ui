@@ -22,6 +22,7 @@ const ProfilePage: React.FC<PageProps> = () => {
     lastName: "",
     gender: 0,
     birthDate: "",
+    birthPlace: "",
     phone: "",
     email: "",
     photo: "",
@@ -50,6 +51,7 @@ const ProfilePage: React.FC<PageProps> = () => {
     lastName,
     gender,
     birthDate,
+    birthPlace,
     phone,
     email,
   } = profile;
@@ -61,7 +63,8 @@ const ProfilePage: React.FC<PageProps> = () => {
       imageAlt={id}
       contents={[
         { key: 1, value: `Gender: ${gender ? "Male" : "Female"}` },
-        { key: 2, value: `Date of Birth: ${birthDate}` },
+        { key: 2, value: `Birth date: ${birthDate}` },
+        { key: 2, value: `Birth place: ${birthPlace}` },
         { key: 3, value: `Phone number: ${phone}` },
         { key: 4, value: `E-mail address: ${email}` },
         {

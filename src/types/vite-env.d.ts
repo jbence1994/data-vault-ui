@@ -53,6 +53,7 @@ interface Profile {
   lastName: string;
   gender: number;
   birthDate: string;
+  birthPlace: string;
   phone: string;
   email: string;
   photo: string;
