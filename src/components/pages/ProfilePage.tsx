@@ -2,15 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
+import Card from "../common/Card";
+
 import PROFILE from "../../graphql/queries/profileQuery.ts";
 
 import { NETWORK_ONLY } from "../../constants/app.constants.ts";
+
+import noImage from "../../assets/no-image.png";
 
 const ProfilePage: React.FC<PageProps> = () => {
   const { id: routeParamId } = useParams();
 
   const [profile, setProfile] = useState<Profile>({
-    id: routeParamId,
+    id: `${routeParamId}`,
     firstName: "",
     middleName: "",
     lastName: "",
@@ -33,20 +37,36 @@ const ProfilePage: React.FC<PageProps> = () => {
     }
   }, [loading, error, data]);
 
+  const handlePhotoUpload = () => {
+    console.log("Uploading photo...");
+  };
+
+  const {
+    id,
+    firstName,
+    middleName,
+    lastName,
+    gender,
+    birthDate,
+    phone,
+    email,
+    createdDateTime,
+  } = profile;
+
   return (
-    <section className="row">
-      <article className="col-sm-12 col-md-12 col-lg-12">
-        <p>{profile.firstName}</p>
-        <p>{profile.middleName}</p>
-        <p>{profile.lastName}</p>
-        <p>{profile.gender}</p>
-        <p>{profile.birthDate}</p>
-        <p>{profile.phone}</p>
-        <p>{profile.email}</p>
-        <p>{profile.photo}</p>
-        <p>{profile.createdDateTime}</p>
-      </article>
-    </section>
+    <Card
+      title={`Név: ${lastName}, ${middleName} ${firstName}`}
+      image={noImage}
+      imageAlt={id}
+      contents={[
+        { key: 1, value: `Nem: ${gender ? "Férfi" : "Nő"}` },
+        { key: 2, value: `Születési idő: ${birthDate}` },
+        { key: 3, value: `Telefonszám: ${phone}` },
+        { key: 4, value: `E-mail cím: ${email}` },
+        { key: 5, value: `Rögzítés dátuma: ${createdDateTime}` },
+      ]}
+      onChange={handlePhotoUpload}
+    />
   );
 };
 
