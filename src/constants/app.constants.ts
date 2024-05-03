@@ -1,3 +1,5 @@
+import { WatchQueryFetchPolicy } from "@apollo/client";
+
 // Application properties constants
 
 const APPLICATION_NAME: string = "DataVault";
@@ -24,4 +26,13 @@ const ALL_PATHS: KeyValuePair<string, string> = {
   value: "*",
 };
 
-export { APPLICATION_NAME, MAIN_PAGE, PROFILES_PAGE, ERROR_PAGE, ALL_PATHS };
+const NETWORK_ONLY: WatchQueryFetchPolicy = "network-only";
+
+export {
+  APPLICATION_NAME,
+  MAIN_PAGE,
+  PROFILES_PAGE,
+  ERROR_PAGE,
+  ALL_PATHS,
+  NETWORK_ONLY,
+};
