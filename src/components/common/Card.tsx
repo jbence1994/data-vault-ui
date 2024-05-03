@@ -12,7 +12,7 @@ const Card: React.FC<CardProps> = ({
   const photoUploadName: string = "photo-upload";
 
   return (
-    <div className="card mt-3 mb-3">
+    <div className="card mt-3 mb-3 ms-5 me-5">
       <label htmlFor={photoUploadName}>
         <img
           src={image}
