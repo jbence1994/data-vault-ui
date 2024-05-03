@@ -21,7 +21,6 @@ const ProfilesPage: React.FC<PageProps> = () => {
   }, [loading, error, data]);
 
   const profileTableColumns = [
-    { key: "id", value: "Identifier" },
     { key: "firstName", value: "First name" },
     { key: "middleName", value: "Middle name" },
     { key: "lastName", value: "Last name" },
