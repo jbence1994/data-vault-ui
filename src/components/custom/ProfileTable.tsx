@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProfileTable: React.FC<ProfileTableProps> = ({ columns, profiles }) => {
+const ProfilesTable: React.FC<ProfileTableProps> = ({ columns, profiles }) => {
   return (
     <React.Fragment>
       <table className="table table-responsive table-hover text-center">
@@ -39,4 +39,4 @@ const ProfileTable: React.FC<ProfileTableProps> = ({ columns, profiles }) => {
   );
 };
 
-export default ProfileTable;
+export default ProfilesTable;

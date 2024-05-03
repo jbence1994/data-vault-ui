@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 
-import ProfileTable from "../custom/ProfileTable.tsx";
+import ProfilesTable from "../custom/ProfileTable";
 
 import PROFILES from "../../graphql/queries/profilesQuery.ts";
 
@@ -20,7 +20,7 @@ const ProfilesPage: React.FC<PageProps> = () => {
     }
   }, [loading, error, data]);
 
-  const profileTableColumns = [
+  const profilesTableColumns = [
     { key: "firstName", value: "First name" },
     { key: "middleName", value: "Middle name" },
     { key: "lastName", value: "Last name" },
@@ -31,7 +31,7 @@ const ProfilesPage: React.FC<PageProps> = () => {
     <section className="row">
       {profiles.map((profile: Profile) => (
         <article key={profile.id} className="col-sm-12 col-md-12 col-lg-12">
-          <ProfileTable columns={profileTableColumns} profiles={profiles} />
+          <ProfilesTable columns={profilesTableColumns} profiles={profiles} />
         </article>
       ))}
     </section>
