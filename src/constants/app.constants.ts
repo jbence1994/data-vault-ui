@@ -31,7 +31,10 @@ const ALL_PATHS: KeyValuePair<string, string> = {
   value: "*",
 };
 
+// Miscellaneous constants
+
 const NETWORK_ONLY: WatchQueryFetchPolicy = "network-only";
+const PROFILE_PATH: string = "/profile";
 
 export {
   APPLICATION_NAME,
@@ -41,4 +44,5 @@ export {
   ERROR_PAGE,
   ALL_PATHS,
   NETWORK_ONLY,
+  PROFILE_PATH,
 };

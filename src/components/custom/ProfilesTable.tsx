@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import { formatDate } from "../../util/dateFormatter.ts";
+
+import { PROFILE_PATH } from "../../constants/app.constants.ts";
 
 const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
   return (
@@ -20,7 +23,7 @@ const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
                 {
                   <Link
                     className="link-offset-2 link-underline link-underline-opacity-0"
-                    to={`/profile/${profile.id}`} // FIXME: move '/profile/' to constant value.
+                    to={`${PROFILE_PATH}/${profile.id}`}
                   >
                     {profile.id}
                   </Link>
