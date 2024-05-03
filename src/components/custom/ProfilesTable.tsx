@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import { formatDate } from "../../util/dateFormatter.ts";
 
-const ProfilesTable: React.FC<ProfileTableProps> = ({ columns, profiles }) => {
+import { PROFILE_PATH } from "../../constants/app.constants.ts";
+
+const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
   return (
     <React.Fragment>
       <table className="table table-responsive table-hover text-center">
         <thead>
           <tr>
             <th>Identifier</th>
-            {columns.map((column: KeyValuePair<string, string>) => (
-              <th key={column.key}>{column.value}</th>
-            ))}
+            <th>Full name</th>
             <th>Created date time</th>
           </tr>
         </thead>
@@ -22,17 +23,13 @@ const ProfilesTable: React.FC<ProfileTableProps> = ({ columns, profiles }) => {
                 {
                   <Link
                     className="link-offset-2 link-underline link-underline-opacity-0"
-                    to={`/profile/${profile.id}`}
+                    to={`${PROFILE_PATH}/${profile.id}`}
                   >
                     {profile.id}
                   </Link>
                 }
               </td>
-              {columns.map((column: KeyValuePair<string, string>) => (
-                <td key={`${profile.id}${column.value}`}>
-                  {profile[column.key]}
-                </td>
-              ))}
+              <td>{`${profile.lastName}, ${profile.middleName} ${profile.firstName}`}</td>
               <td>{formatDate(profile.createdDateTime)}</td>
             </tr>
           ))}

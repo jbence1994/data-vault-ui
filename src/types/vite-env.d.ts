@@ -39,7 +39,6 @@ interface MainPageProps extends PageProps {
 }
 
 interface ProfileTableProps {
-  columns: KeyValuePair<string, string>[];
   profiles: Profile[];
 }
 
@@ -53,6 +52,7 @@ interface Profile {
   lastName: string;
   gender: number;
   birthDate: string;
+  birthPlace: string;
   phone: string;
   email: string;
   photo: string;
