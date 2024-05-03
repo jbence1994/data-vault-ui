@@ -32,8 +32,8 @@ interface ProfileTableProps {
 // Custom data model types
 
 interface Profile {
-  [key: string]: number | string;
-  id: string;
+  [key: string]: number | string | undefined;
+  id: string | undefined;
   firstName: string;
   middleName: string;
   lastName: string;

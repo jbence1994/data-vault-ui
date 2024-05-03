@@ -4,11 +4,13 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./common/Navbar";
 import MainPage from "./pages/MainPage";
 import ProfilesPage from "./pages/ProfilesPage";
+import ProfilePage from "./pages/ProfilePage";
 import ErrorPage from "./pages/ErrorPage";
 
 import {
   MAIN_PAGE,
   PROFILES_PAGE,
+  PROFILE_PAGE,
   ERROR_PAGE,
   ALL_PATHS,
 } from "../constants/app.constants";
@@ -36,6 +38,11 @@ const App: React.FC<AppProps> = ({ applicationName }) => {
             path={PROFILES_PAGE.value}
             element={<ProfilesPage pageName={PROFILES_PAGE.key} />}
           />
+          <Route
+            path={PROFILE_PAGE.value}
+            element={<ProfilePage pageName={PROFILES_PAGE.key} />}
+          />
+
           <Route
             path={ERROR_PAGE.value}
             element={<ErrorPage pageName={ERROR_PAGE.key} />}
