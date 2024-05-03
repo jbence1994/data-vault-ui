@@ -33,7 +33,7 @@ const Card: React.FC<CardProps> = ({
         />
       </label>
       <div className="card-body">
-        <h5 className="card-title">{title}</h5>
+        <h5 className="card-title mb-3">{title}</h5>
         {contents.map((content: KeyValuePair<number, string>) => (
           <p className="card-text" key={content.key}>
             {content.value}
