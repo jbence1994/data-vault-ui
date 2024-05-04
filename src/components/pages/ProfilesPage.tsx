@@ -22,11 +22,9 @@ const ProfilesPage: React.FC<PageProps> = () => {
 
   return (
     <section className="row">
-      {profiles.map((profile: Profile) => (
-        <article key={profile.id} className="col-sm-12 col-md-12 col-lg-12">
-          <ProfilesTable profiles={profiles} />
-        </article>
-      ))}
+      <article className="col-sm-12 col-md-12 col-lg-12">
+        <ProfilesTable profiles={profiles} />
+      </article>
     </section>
   );
 };
