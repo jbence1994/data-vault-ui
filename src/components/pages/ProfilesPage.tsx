@@ -3,9 +3,9 @@ import { useQuery } from "@apollo/client";
 
 import ProfilesTable from "../custom/ProfilesTable";
 
-import PROFILES from "../../graphql/queries/profilesQuery.ts";
+import PROFILES from "../../graphql/queries/profilesQuery";
 
-import { NETWORK_ONLY } from "../../constants/app.constants.ts";
+import { NETWORK_ONLY } from "../../constants/app.constants";
 
 const ProfilesPage: React.FC<PageProps> = () => {
   const [profiles, setProfiles] = useState<Profile[]>([]);

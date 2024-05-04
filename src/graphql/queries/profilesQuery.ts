@@ -8,12 +8,6 @@ const PROFILES: DocumentNode = gql`
       firstName
       middleName
       lastName
-      gender
-      birthDate
-      birthPlace
-      phone
-      email
-      photo
       createdDateTime
     }
   }
