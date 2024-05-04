@@ -52,9 +52,9 @@ const ProfilePage: React.FC<PageProps> = () => {
     gender,
     birthDate,
     birthPlace,
-    photo,
     phone,
     email,
+    photo,
   } = profile;
 
   let image;
