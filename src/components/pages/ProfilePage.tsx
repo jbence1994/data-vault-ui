@@ -52,14 +52,23 @@ const ProfilePage: React.FC<PageProps> = () => {
     gender,
     birthDate,
     birthPlace,
+    photo,
     phone,
     email,
   } = profile;
 
+  let image;
+
+  if (photo) {
+    image = `${process.env.VITE_PHOTO_RETRIEVE_ENDPOINT}/${photo}`;
+  } else {
+    image = noImage;
+  }
+
   return (
     <Card
       title={`Full name: ${lastName}, ${middleName} ${firstName}`}
-      image={noImage}
+      image={image}
       imageAlt={id}
       contents={[
         { key: 1, value: `Gender: ${gender ? "Male" : "Female"}` },

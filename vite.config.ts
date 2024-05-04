@@ -11,6 +11,9 @@ export default defineConfig(({ mode }) => {
       "process.env.VITE_DATA_VAULT_API_GRAPHQL_ENDPOINT": JSON.stringify(
         env.VITE_DATA_VAULT_API_GRAPHQL_ENDPOINT,
       ),
+      "process.env.VITE_PHOTO_RETRIEVE_ENDPOINT": JSON.stringify(
+        env.VITE_PHOTO_RETRIEVE_ENDPOINT,
+      ),
     },
     plugins: [react()],
   };
