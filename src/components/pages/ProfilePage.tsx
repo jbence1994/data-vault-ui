@@ -34,13 +34,13 @@ const ProfilePage: React.FC<PageProps> = () => {
     variables: { id: routeParamId },
   });
 
-  useEffect(() => {
+  useEffect((): void => {
     if (!loading && !error) {
       setProfile(data.profile);
     }
   }, [loading, error, data]);
 
-  const handlePhotoUpload = () => {
+  const handlePhotoUpload = (): void => {
     console.log("Uploading photo...");
   };
 
@@ -54,12 +54,21 @@ const ProfilePage: React.FC<PageProps> = () => {
     birthPlace,
     phone,
     email,
+    photo,
   } = profile;
+
+  let image;
+
+  if (photo) {
+    image = `${process.env.VITE_PHOTO_RETRIEVE_ENDPOINT}/${photo}`;
+  } else {
+    image = noImage;
+  }
 
   return (
     <Card
       title={`Full name: ${lastName}, ${middleName} ${firstName}`}
-      image={noImage}
+      image={image}
       imageAlt={id}
       contents={[
         { key: 1, value: `Gender: ${gender ? "Male" : "Female"}` },
