@@ -5,12 +5,14 @@ import Navbar from "./common/Navbar";
 import MainPage from "./pages/MainPage";
 import ProfilesPage from "./pages/ProfilesPage";
 import ProfilePage from "./pages/ProfilePage";
+import CreateProfileForm from "./pages/CreateProfileForm";
 import ErrorPage from "./pages/ErrorPage";
 
 import {
   MAIN_PAGE,
   PROFILES_PAGE,
   PROFILE_PAGE,
+  CREATE_PROFILE_FORM,
   ERROR_PAGE,
   ALL_PATHS,
 } from "../constants/app.constants";
@@ -18,7 +20,11 @@ import {
 import logo from "../assets/cloud.png";
 
 const App: React.FC<AppProps> = ({ applicationName }) => {
-  const pages: KeyValuePair<string, string>[] = [MAIN_PAGE, PROFILES_PAGE];
+  const pages: KeyValuePair<string, string>[] = [
+    MAIN_PAGE,
+    PROFILES_PAGE,
+    CREATE_PROFILE_FORM,
+  ];
 
   return (
     <BrowserRouter>
@@ -42,7 +48,10 @@ const App: React.FC<AppProps> = ({ applicationName }) => {
             path={PROFILE_PAGE.value}
             element={<ProfilePage pageName={PROFILES_PAGE.key} />}
           />
-
+          <Route
+            path={CREATE_PROFILE_FORM.value}
+            element={<CreateProfileForm pageName={CREATE_PROFILE_FORM.key} />}
+          />
           <Route
             path={ERROR_PAGE.value}
             element={<ErrorPage pageName={ERROR_PAGE.key} />}

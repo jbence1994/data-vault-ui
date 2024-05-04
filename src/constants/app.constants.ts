@@ -21,6 +21,11 @@ const PROFILE_PAGE: KeyValuePair<string, string> = {
   value: "/profile/:id",
 };
 
+const CREATE_PROFILE_FORM: KeyValuePair<string, string> = {
+  key: "Create new profile",
+  value: "/profile/new",
+};
+
 const ERROR_PAGE: KeyValuePair<string, string> = {
   key: "Error",
   value: "/error",
@@ -41,6 +46,7 @@ export {
   MAIN_PAGE,
   PROFILES_PAGE,
   PROFILE_PAGE,
+  CREATE_PROFILE_FORM,
   ERROR_PAGE,
   ALL_PATHS,
   NETWORK_ONLY,
