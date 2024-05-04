@@ -13,7 +13,7 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div
-      className="card"
+      className="card mt-3"
       style={{
         width: "20rem",
         display: "block",
@@ -31,7 +31,7 @@ const Card: React.FC<CardProps> = ({
       <div className="card-body">
         <h5 className="card-title mb-3">{title}</h5>
         {contents.map((content: KeyValuePair<number, string>) => (
-          <p className="card-text" key={content.key}>
+          <p className="card-text mb-2" key={content.key}>
             {content.value}
           </p>
         ))}
