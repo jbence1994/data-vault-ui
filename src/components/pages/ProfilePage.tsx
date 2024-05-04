@@ -34,13 +34,13 @@ const ProfilePage: React.FC<PageProps> = () => {
     variables: { id: routeParamId },
   });
 
-  useEffect(() => {
+  useEffect((): void => {
     if (!loading && !error) {
       setProfile(data.profile);
     }
   }, [loading, error, data]);
 
-  const handlePhotoUpload = () => {
+  const handlePhotoUpload = (): void => {
     console.log("Uploading photo...");
   };
 

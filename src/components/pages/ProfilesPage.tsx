@@ -14,7 +14,7 @@ const ProfilesPage: React.FC<PageProps> = () => {
     fetchPolicy: NETWORK_ONLY,
   });
 
-  useEffect(() => {
+  useEffect((): void => {
     if (!loading && !error) {
       setProfiles(data.profiles);
     }
