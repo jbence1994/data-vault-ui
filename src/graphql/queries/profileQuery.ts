@@ -9,6 +9,7 @@ const PROFILE: DocumentNode = gql`
       middleName
       lastName
       gender
+      nationality
       birthDate
       birthPlace
       phone

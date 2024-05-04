@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { formatDate } from "../../util/dateFormatter.ts";
+import { formatDate } from "../../util/dateFormatter";
 
-import { PROFILE_PATH } from "../../constants/app.constants.ts";
+import { PROFILE_PATH } from "../../constants/app.constants";
 
 const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
   return (

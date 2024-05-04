@@ -51,6 +51,7 @@ interface Profile {
   middleName: string;
   lastName: string;
   gender: number;
+  nationality: string;
   birthDate: string;
   birthPlace: string;
   phone: string;

@@ -3,9 +3,9 @@ import { useQuery } from "@apollo/client";
 
 import ProfilesTable from "../custom/ProfilesTable";
 
-import PROFILES from "../../graphql/queries/profilesQuery.ts";
+import PROFILES from "../../graphql/queries/profilesQuery";
 
-import { NETWORK_ONLY } from "../../constants/app.constants.ts";
+import { NETWORK_ONLY } from "../../constants/app.constants";
 
 const ProfilesPage: React.FC<PageProps> = () => {
   const [profiles, setProfiles] = useState<Profile[]>([]);
@@ -22,11 +22,9 @@ const ProfilesPage: React.FC<PageProps> = () => {
 
   return (
     <section className="row">
-      {profiles.map((profile: Profile) => (
-        <article key={profile.id} className="col-sm-12 col-md-12 col-lg-12">
-          <ProfilesTable profiles={profiles} />
-        </article>
-      ))}
+      <article className="col-sm-12 col-md-12 col-lg-12">
+        <ProfilesTable profiles={profiles} />
+      </article>
     </section>
   );
 };

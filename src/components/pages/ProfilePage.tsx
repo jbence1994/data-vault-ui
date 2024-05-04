@@ -4,11 +4,9 @@ import { useQuery } from "@apollo/client";
 
 import Card from "../common/Card";
 
-import PROFILE from "../../graphql/queries/profileQuery.ts";
+import PROFILE from "../../graphql/queries/profileQuery";
 
-import { NETWORK_ONLY } from "../../constants/app.constants.ts";
-
-import { formatDate } from "../../util/dateFormatter.ts";
+import { NETWORK_ONLY } from "../../constants/app.constants";
 
 import noImage from "../../assets/no-image.png";
 
@@ -21,6 +19,7 @@ const ProfilePage: React.FC<PageProps> = () => {
     middleName: "",
     lastName: "",
     gender: 0,
+    nationality: "",
     birthDate: "",
     birthPlace: "",
     phone: "",
@@ -50,6 +49,7 @@ const ProfilePage: React.FC<PageProps> = () => {
     middleName,
     lastName,
     gender,
+    nationality,
     birthDate,
     birthPlace,
     phone,
@@ -67,19 +67,16 @@ const ProfilePage: React.FC<PageProps> = () => {
 
   return (
     <Card
-      title={`Full name: ${lastName}, ${middleName} ${firstName}`}
+      title={`${lastName}, ${middleName} ${firstName}`}
       image={image}
       imageAlt={id}
       contents={[
         { key: 1, value: `Gender: ${gender ? "Male" : "Female"}` },
-        { key: 2, value: `Birth date: ${birthDate}` },
-        { key: 3, value: `Birth place: ${birthPlace}` },
-        { key: 4, value: `Phone number: ${phone}` },
-        { key: 5, value: `E-mail address: ${email}` },
-        {
-          key: 6,
-          value: `Created date time: ${formatDate(profile.createdDateTime)}`,
-        },
+        { key: 2, value: `Nationality: ${nationality}` },
+        { key: 3, value: `Date of birth: ${birthDate}` },
+        { key: 4, value: `Place of birth: ${birthPlace}` },
+        { key: 5, value: `Phone: ${phone}` },
+        { key: 6, value: `E-mail: ${email}` },
       ]}
       onChange={handlePhotoUpload}
     />

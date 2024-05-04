@@ -12,20 +12,16 @@ const Card: React.FC<CardProps> = ({
   const photoUploadName: string = "photo-upload";
 
   return (
-    <div className="card mt-3 mb-3 ms-5 me-5">
+    <div
+      className="card mt-3"
+      style={{
+        width: "20rem",
+        display: "block",
+        margin: "0 auto",
+      }}
+    >
       <label htmlFor={photoUploadName}>
-        <img
-          src={image}
-          alt={imageAlt}
-          className="card-img-top"
-          style={{
-            width: "200px",
-            height: "200px",
-            display: "block",
-            margin: "0 auto",
-            objectFit: "contain",
-          }}
-        />
+        <img className="card-img-top" src={image} alt={imageAlt} />
         <FileInput
           name={photoUploadName}
           disabled={!image.includes("no-image")}
@@ -35,7 +31,7 @@ const Card: React.FC<CardProps> = ({
       <div className="card-body">
         <h5 className="card-title mb-3">{title}</h5>
         {contents.map((content: KeyValuePair<number, string>) => (
-          <p className="card-text" key={content.key}>
+          <p className="card-text mb-2" key={content.key}>
             {content.value}
           </p>
         ))}
