@@ -102,59 +102,75 @@ const CreateProfileForm: React.FC<PageProps> = () => {
     <section className="row">
       <article className="col-12">
         <form onSubmit={handleSubmit} noValidate>
-          <TextInput
-            type="text"
-            name="firstName"
-            value={profile.firstName}
-            labelText="First name"
-            errorMessage=""
-            onChange={handleTextChange}
-          />
-          <TextInput
-            type="text"
-            name="middleName"
-            value={profile.middleName}
-            labelText="Middle name"
-            errorMessage=""
-            onChange={handleTextChange}
-          />
-          <TextInput
-            type="text"
-            name="lastName"
-            value={profile.lastName}
-            labelText="Last name"
-            errorMessage=""
-            onChange={handleTextChange}
-          />
-          <NationalitiesDropdown
-            selectedNationality={profile.nationality}
-            onChange={handleDropdownChanged}
-          />
-          <TextInput
-            type="text"
-            name="birthPlace"
-            value={profile.birthPlace}
-            labelText="Place of birth"
-            errorMessage=""
-            onChange={handleTextChange}
-          />
-          <TextInput
-            type="email"
-            name="email"
-            value={profile.email}
-            labelText="E-mail"
-            errorMessage=""
-            onChange={handleTextChange}
-          />
-          <TextInput
-            type="text"
-            name="phone"
-            value={profile.phone}
-            labelText="Phone"
-            errorMessage=""
-            onChange={handleTextChange}
-          />
-          <Button text="Create profile" />
+          <div className="mb-3">
+            <TextInput
+              type="text"
+              name="firstName"
+              value={profile.firstName}
+              labelText="First name"
+              errorMessage=""
+              onChange={handleTextChange}
+            />
+          </div>
+          <div className="mb-3">
+            <TextInput
+              type="text"
+              name="middleName"
+              value={profile.middleName}
+              labelText="Middle name"
+              errorMessage=""
+              onChange={handleTextChange}
+            />
+          </div>
+          <div className="mb-3">
+            <TextInput
+              type="text"
+              name="lastName"
+              value={profile.lastName}
+              labelText="Last name"
+              errorMessage=""
+              onChange={handleTextChange}
+            />
+          </div>
+          <div className="mb-3">
+            <NationalitiesDropdown
+              selectedNationality={profile.nationality}
+              onChange={handleDropdownChanged}
+            />
+          </div>
+          <div className="mb-3">
+            <TextInput
+              type="text"
+              name="birthPlace"
+              value={profile.birthPlace}
+              labelText="Place of birth"
+              errorMessage=""
+              onChange={handleTextChange}
+            />
+          </div>
+          <div className="mb-3">
+            <TextInput
+              type="email"
+              name="email"
+              value={profile.email}
+              labelText="E-mail"
+              errorMessage=""
+              onChange={handleTextChange}
+            />
+          </div>
+          <div className="mb-3">
+            <TextInput
+              type="text"
+              name="phone"
+              value={profile.phone}
+              labelText="Phone"
+              errorMessage=""
+              onChange={handleTextChange}
+            />
+          </div>
+          <div className="mb-3">
+            <Button text="Create profile" />
+          </div>
         </form>
         {shouldShowSuccessModalWindow && (
           <ModalWindow
