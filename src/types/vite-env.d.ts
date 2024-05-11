@@ -22,7 +22,6 @@ interface CardProps {
 interface DropdownProps {
   name: string;
   value: string;
-  firstOptionText: string;
   labelText: string;
   data: KeyValuePair<string, string>[];
   errorMessage: string;

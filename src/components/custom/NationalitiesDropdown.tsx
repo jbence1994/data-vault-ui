@@ -36,7 +36,6 @@ const NationalitiesDropdown: React.FC<NationalitiesDropdownProps> = ({
     <Dropdown
       name="nationality"
       value={selectedNationality}
-      firstOptionText={"Select nationality..."}
       labelText="Nationality"
       data={mapToKeyValuePair(nationalities)}
       errorMessage=""

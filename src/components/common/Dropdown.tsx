@@ -5,7 +5,6 @@ import ErrorMessage from "./ErrorMessage";
 const Dropdown: React.FC<DropdownProps> = ({
   name,
   value,
-  firstOptionText,
   labelText,
   data,
   errorMessage,
@@ -22,7 +21,6 @@ const Dropdown: React.FC<DropdownProps> = ({
           value={value}
           onChange={onChange}
         >
-          <option value={0}>{firstOptionText}</option>
           {data.map((item: KeyValuePair<string, string>) => (
             <option key={item.key} value={item.key}>
               {item.value}
