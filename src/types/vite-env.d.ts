@@ -79,6 +79,11 @@ interface MainPageProps extends PageProps {
   applicationName: string;
 }
 
+interface NationalitiesDropdownProps {
+  selectedNationality: string;
+  onChange: ChangeEventHandler<HTMLSelectElement>;
+}
+
 interface ProfileTableProps {
   profiles: Profile[];
 }

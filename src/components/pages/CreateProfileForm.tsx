@@ -1,35 +1,17 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { useQuery, useMutation } from "@apollo/client";
+import React, { ChangeEvent, FormEvent, useState } from "react";
+import { useMutation } from "@apollo/client";
 
 import TextInput from "../common/TextInput";
-import Dropdown from "../common/Dropdown";
+import NationalitiesDropdown from "../custom/NationalitiesDropdown";
 import Button from "../common/Button";
 import ModalWindow from "../common/ModalWindow";
 
-import NATIONALITIES from "../../graphql/queries/nationalitiesQuery";
 import CREATE_PROFILE from "../../graphql/mutations/createProfileMutation";
 
-import { NETWORK_ONLY, PROFILES_PAGE } from "../../constants/app.constants";
+import { PROFILES_PAGE } from "../../constants/app.constants";
 
 const CreateProfileForm: React.FC<PageProps> = () => {
-  const [nationalities, setNationalities] = useState<Nationality[]>([]);
-
-  const {
-    loading: queryLoading,
-    error: queryError,
-    data,
-  } = useQuery(NATIONALITIES, {
-    fetchPolicy: NETWORK_ONLY,
-  });
-
-  useEffect((): void => {
-    if (!queryLoading && !queryError) {
-      setNationalities(data.nationalities);
-    }
-  }, [queryLoading, queryError, data]);
-
-  const [createProfile, { loading: mutationLoading, error: mutationError }] =
-    useMutation(CREATE_PROFILE);
+  const [createProfile, { loading, error }] = useMutation(CREATE_PROFILE);
 
   const [profile, setProfile] = useState<ProfileInput>({
     firstName: "",
@@ -105,7 +87,7 @@ const CreateProfileForm: React.FC<PageProps> = () => {
         },
       });
 
-      if (!mutationLoading && !mutationError) {
+      if (!loading && !error) {
         const { data } = response;
         setCreatedProfileId(data.profile.id);
       }
@@ -144,13 +126,8 @@ const CreateProfileForm: React.FC<PageProps> = () => {
             errorMessage=""
             onChange={handleTextChange}
           />
-          <Dropdown
-            name="nationality"
-            value={profile.nationality}
-            firstOptionText={"Select nationality..."}
-            labelText="Nationality"
-            data={nationalities}
-            errorMessage=""
+          <NationalitiesDropdown
+            selectedNationality={profile.nationality}
             onChange={handleDropdownChanged}
           />
           <TextInput
