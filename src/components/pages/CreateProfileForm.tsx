@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useMutation } from "@apollo/client";
 
 import TextInput from "../common/TextInput";
+import Dropdown from "../common/Dropdown";
 import NationalitiesDropdown from "../custom/NationalitiesDropdown";
 import Button from "../common/Button";
 import ModalWindow from "../common/ModalWindow";
@@ -102,75 +103,95 @@ const CreateProfileForm: React.FC<PageProps> = () => {
     <section className="row">
       <article className="col-12">
         <form onSubmit={handleSubmit} noValidate>
-          <div className="mb-3">
-            <TextInput
-              type="text"
-              name="firstName"
-              value={profile.firstName}
-              labelText="First name"
-              errorMessage=""
-              onChange={handleTextChange}
-            />
+          <div className="row mb-3">
+            <div className="col-4">
+              <TextInput
+                type="text"
+                name="firstName"
+                value={profile.firstName}
+                labelText="First name"
+                errorMessage=""
+                onChange={handleTextChange}
+              />
+            </div>
+            <div className="col-4">
+              <TextInput
+                type="text"
+                name="middleName"
+                value={profile.middleName}
+                labelText="Middle name"
+                errorMessage=""
+                onChange={handleTextChange}
+              />
+            </div>
+            <div className="col-4">
+              <TextInput
+                type="text"
+                name="lastName"
+                value={profile.lastName}
+                labelText="Last name"
+                errorMessage=""
+                onChange={handleTextChange}
+              />
+            </div>
           </div>
-          <div className="mb-3">
-            <TextInput
-              type="text"
-              name="middleName"
-              value={profile.middleName}
-              labelText="Middle name"
-              errorMessage=""
-              onChange={handleTextChange}
-            />
+          <div className="row mb-3">
+            <div className="col-4">
+              <Dropdown
+                name="gender"
+                value="gender"
+                firstOptionText="Select gender"
+                labelText="Gender"
+                data={[
+                  { key: "0", value: "Female" },
+                  { key: "1", value: "Male" },
+                ]}
+                errorMessage=""
+                onChange={handleDropdownChanged}
+              />
+            </div>
+            <div className="col-4">
+              <NationalitiesDropdown
+                selectedNationality={profile.nationality}
+                onChange={handleDropdownChanged}
+              />
+            </div>
+            <div className="col-4"></div>
           </div>
-          <div className="mb-3">
-            <TextInput
-              type="text"
-              name="lastName"
-              value={profile.lastName}
-              labelText="Last name"
-              errorMessage=""
-              onChange={handleTextChange}
-            />
+
+          <div className="row mb-3">
+            <div className="col-4">
+              <TextInput
+                type="text"
+                name="birthPlace"
+                value={profile.birthPlace}
+                labelText="Place of birth"
+                errorMessage=""
+                onChange={handleTextChange}
+              />
+            </div>
+            <div className="col-4">
+              <TextInput
+                type="text"
+                name="phone"
+                value={profile.phone}
+                labelText="Phone"
+                errorMessage=""
+                onChange={handleTextChange}
+              />
+            </div>
+            <div className="col-4">
+              <TextInput
+                type="email"
+                name="email"
+                value={profile.email}
+                labelText="E-mail"
+                errorMessage=""
+                onChange={handleTextChange}
+              />
+            </div>
           </div>
-          <div className="mb-3">
-            <NationalitiesDropdown
-              selectedNationality={profile.nationality}
-              onChange={handleDropdownChanged}
-            />
-          </div>
-          <div className="mb-3">
-            <TextInput
-              type="text"
-              name="birthPlace"
-              value={profile.birthPlace}
-              labelText="Place of birth"
-              errorMessage=""
-              onChange={handleTextChange}
-            />
-          </div>
-          <div className="mb-3">
-            <TextInput
-              type="email"
-              name="email"
-              value={profile.email}
-              labelText="E-mail"
-              errorMessage=""
-              onChange={handleTextChange}
-            />
-          </div>
-          <div className="mb-3">
-            <TextInput
-              type="text"
-              name="phone"
-              value={profile.phone}
-              labelText="Phone"
-              errorMessage=""
-              onChange={handleTextChange}
-            />
-          </div>
-          <div className="mb-3">
-            <Button text="Create profile" />
-          </div>
+          <Button text="Create profile" />
         </form>
         {shouldShowSuccessModalWindow && (
           <ModalWindow
