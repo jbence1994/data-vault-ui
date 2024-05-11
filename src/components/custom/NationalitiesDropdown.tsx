@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 
-import Dropdown from "../common/Dropdown.tsx";
+import Dropdown from "../common/Dropdown";
 
-import NATIONALITIES from "../../graphql/queries/nationalitiesQuery.ts";
+import NATIONALITIES from "../../graphql/queries/nationalitiesQuery";
 
-import { NETWORK_ONLY } from "../../constants/app.constants.ts";
+import { NETWORK_ONLY } from "../../constants/app.constants";
 
 const NationalitiesDropdown: React.FC<NationalitiesDropdownProps> = ({
   selectedNationality,
@@ -23,13 +23,22 @@ const NationalitiesDropdown: React.FC<NationalitiesDropdownProps> = ({
     }
   }, [loading, error, data]);
 
+  const mapToKeyValuePair = (nationalities: Nationality[]) => {
+    return nationalities.map(
+      (nationality: Nationality): KeyValuePair<string, string> => ({
+        key: nationality.alpha3Code,
+        value: nationality.countryName,
+      }),
+    );
+  };
+
   return (
     <Dropdown
       name="nationality"
       value={selectedNationality}
       firstOptionText={"Select nationality..."}
       labelText="Nationality"
-      data={nationalities}
+      data={mapToKeyValuePair(nationalities)}
       errorMessage=""
       onChange={onChange}
     />
