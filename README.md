@@ -3,6 +3,8 @@ data-vault-ui
 
 ### Personal data management application's frontend.
 
+[![Continuous integration](https://github.com/jbence1994/data-vault-ui/actions/workflows/build.yml/badge.svg)](https://github.com/jbence1994/data-vault-ui/actions/workflows/build.yml)
+
 [Contributing Guide](.github/CONTRIBUTING.md)
 
 Prerequisites
