@@ -23,9 +23,9 @@ const Dropdown: React.FC<DropdownProps> = ({
           onChange={onChange}
         >
           <option value={0}>{firstOptionText}</option>
-          {data.map((item) => (
-            <option key={item.alpha3Code} value={item.alpha3Code}>
-              {item.countryName}
+          {data.map((item: KeyValuePair<string, string>) => (
+            <option key={item.key} value={item.key}>
+              {item.value}
             </option>
           ))}
         </select>

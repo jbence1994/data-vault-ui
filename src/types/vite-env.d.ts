@@ -24,7 +24,7 @@ interface DropdownProps {
   value: string;
   firstOptionText: string;
   labelText: string;
-  data: any[];
+  data: KeyValuePair<string, string>[];
   errorMessage: string;
   onChange: ChangeEventHandler<HTMLSelectElement>;
 }
