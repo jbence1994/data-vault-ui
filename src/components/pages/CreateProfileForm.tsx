@@ -60,7 +60,15 @@ const CreateProfileForm: React.FC<PageProps> = () => {
     setProfile(updatedProfile);
   };
 
-  const handleDropdownChanged = ({
+  const handleGenderDropdownChanged = ({
+    currentTarget: input,
+  }: ChangeEvent<HTMLSelectElement>): void => {
+    const updatedProfile = { ...profile };
+    updatedProfile[input.name] = parseInt(input.value);
+    setProfile(updatedProfile);
+  };
+
+  const handleNationalityDropdownChanged = ({
     currentTarget: input,
   }: ChangeEvent<HTMLSelectElement>): void => {
     const updatedProfile = { ...profile };
@@ -139,21 +147,20 @@ const CreateProfileForm: React.FC<PageProps> = () => {
             <div className="col-4">
               <Dropdown
                 name="gender"
-                value="gender"
-                firstOptionText="Select gender"
+                value={profile.gender.toString()}
                 labelText="Gender"
                 data={[
                   { key: "0", value: "Female" },
                   { key: "1", value: "Male" },
                 ]}
                 errorMessage=""
-                onChange={handleDropdownChanged}
+                onChange={handleGenderDropdownChanged}
               />
             </div>
             <div className="col-4">
               <NationalitiesDropdown
                 selectedNationality={profile.nationality}
-                onChange={handleDropdownChanged}
+                onChange={handleNationalityDropdownChanged}
               />
             </div>
             <div className="col-4"></div>
