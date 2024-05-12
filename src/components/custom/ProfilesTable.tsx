@@ -13,6 +13,7 @@ const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
           <tr>
             <th>Identifier</th>
             <th>Full name</th>
+            <th>Nationality</th>
             <th>Created date time</th>
           </tr>
         </thead>
@@ -30,6 +31,8 @@ const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
                 }
               </td>
               <td>{`${profile.lastName}, ${profile.middleName} ${profile.firstName}`}</td>
+              <td>{profile.nationality}</td>
+              {/* TODO: Display a national flag icon*/}
               <td>{formatDate(profile.createdDateTime)}</td>
             </tr>
           ))}
