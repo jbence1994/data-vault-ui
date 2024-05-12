@@ -5,9 +5,7 @@ import Image from "../common/Image.tsx";
 import hungarianFlag from "../../assets/nationalities/hungary.png";
 import usaFlag from "../../assets/nationalities/usa.png";
 
-const NationalitiesIcon: React.FC<NationalitiesIconProps> = ({
-  alpha3Code,
-}) => {
+const NationalityImage: React.FC<NationalityImageProps> = ({ alpha3Code }) => {
   const nationalityNamesAndFlags: Map<string, string> = new Map<string, string>(
     [
       ["HUN", hungarianFlag],
@@ -23,4 +21,4 @@ const NationalitiesIcon: React.FC<NationalitiesIconProps> = ({
   );
 };
 
-export default NationalitiesIcon;
+export default NationalityImage;

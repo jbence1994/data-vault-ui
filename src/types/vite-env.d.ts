@@ -43,7 +43,7 @@ interface MainPageProps extends PageProps {
   applicationName: string;
 }
 
-interface NationalitiesIconProps {
+interface NationalityImageProps {
   alpha3Code: string;
 }
 

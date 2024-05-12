@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import NationalitiesIcon from "./NationalitiesIcon.tsx";
+import NationalityImage from "./NationalityImage.tsx";
 
 import { formatDate } from "../../util/dateFormatter";
 
@@ -34,7 +34,7 @@ const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
               </td>
               <td>{`${profile.lastName}, ${profile.middleName} ${profile.firstName}`}</td>
               <td>
-                <NationalitiesIcon alpha3Code={profile.nationality} />
+                <NationalityImage alpha3Code={profile.nationality} />
               </td>
               <td>{formatDate(profile.createdDateTime)}</td>
             </tr>
