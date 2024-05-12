@@ -107,7 +107,7 @@ const CreateProfileForm: React.FC<PageProps> = () => {
 
       if (!loading && !error) {
         const { data } = response;
-        setCreatedProfileId(data.profile.id);
+        setCreatedProfileId(data.createProfile.id);
       }
 
       setShouldShowSuccessModalWindow(true);
