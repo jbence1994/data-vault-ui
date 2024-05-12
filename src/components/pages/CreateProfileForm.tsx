@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import TextInput from "../common/TextInput";
 import Dropdown from "../common/Dropdown";
 import NationalitiesDropdown from "../custom/NationalitiesDropdown";
+import DateInput from "../common/DateInput";
 import Button from "../common/Button";
 import ModalWindow from "../common/ModalWindow";
 
@@ -71,6 +72,14 @@ const CreateProfileForm: React.FC<PageProps> = () => {
   const handleNationalityDropdownChanged = ({
     currentTarget: input,
   }: ChangeEvent<HTMLSelectElement>): void => {
+    const updatedProfile = { ...profile };
+    updatedProfile[input.name] = input.value;
+    setProfile(updatedProfile);
+  };
+
+  const handleDateInputChanged = ({
+    currentTarget: input,
+  }: ChangeEvent<HTMLInputElement>): void => {
     const updatedProfile = { ...profile };
     updatedProfile[input.name] = input.value;
     setProfile(updatedProfile);
@@ -163,9 +172,15 @@ const CreateProfileForm: React.FC<PageProps> = () => {
                 onChange={handleNationalityDropdownChanged}
               />
             </div>
-            <div className="col-4"></div>
+            <div className="col-4">
+              <DateInput
+                value={profile.birthDate}
+                labelText="Date of birth"
+                name="birthDate"
+                onChange={handleDateInputChanged}
+              />
+            </div>
           </div>
-
           <div className="row mb-3">
             <div className="col-4">
               <TextInput

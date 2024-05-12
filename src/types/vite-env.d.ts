@@ -19,6 +19,13 @@ interface CardProps {
   onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
+interface DateInputProps {
+  name: string;
+  value: string;
+  labelText: string;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+}
+
 interface DropdownProps {
   name: string;
   value: string;
