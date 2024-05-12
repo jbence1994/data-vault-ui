@@ -34,7 +34,7 @@ const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
               </td>
               <td>{`${profile.lastName}, ${profile.middleName} ${profile.firstName}`}</td>
               <td>
-                <NationalitiesIcon nationality={profile.nationality} />
+                <NationalitiesIcon alpha3Code={profile.nationality} />
               </td>
               <td>{formatDate(profile.createdDateTime)}</td>
             </tr>

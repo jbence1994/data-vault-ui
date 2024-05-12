@@ -1,21 +1,26 @@
 import React from "react";
 
+import Image from "../common/Image.tsx";
+
 import hungarianFlag from "../../assets/nationalities/hungary.png";
+import usaFlag from "../../assets/nationalities/usa.png";
 
 const NationalitiesIcon: React.FC<NationalitiesIconProps> = ({
-  nationality,
+  alpha3Code,
 }) => {
-  if (nationality === "HUN") {
-    // TODO: Move to constant value.
-    return (
-      <img
-        src={hungarianFlag}
-        alt={nationality}
-        style={{ width: "50px", height: "50px" }}
-      />
-    );
-  }
-  return <span>{nationality}</span>;
+  const nationalityNamesAndFlags: Map<string, string> = new Map<string, string>(
+    [
+      ["HUN", hungarianFlag],
+      ["USA", usaFlag],
+    ],
+  );
+
+  return (
+    <Image
+      source={nationalityNamesAndFlags.get(alpha3Code)}
+      imageAlt={alpha3Code}
+    />
+  );
 };
 
 export default NationalitiesIcon;
