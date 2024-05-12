@@ -218,7 +218,7 @@ const CreateProfileForm: React.FC<PageProps> = () => {
         {shouldShowSuccessModalWindow && (
           <ModalWindow
             title="Profile created successfully"
-            content={`Successfully created new profile with identifier: #${createdProfileId}.`}
+            content={`Successfully created new profile with identifier: ${createdProfileId}.`}
             buttonText="Continue creating new profiles"
             routingButtonText="Back to profiles"
             redirectUrl={PROFILES_PAGE.value}

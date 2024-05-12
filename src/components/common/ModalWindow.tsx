@@ -19,7 +19,7 @@ const ModalWindow: React.FC<ModalWindowProps> = ({
         float: "left",
         left: "50%",
         top: "50%",
-        transform: " translate(-50%, -50%)",
+        transform: "translate(-50%, -50%)",
       }}
     >
       <div className="modal-header">
