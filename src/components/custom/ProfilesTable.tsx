@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import NationalitiesIcon from "./NationalitiesIcon.tsx";
+
 import { formatDate } from "../../util/dateFormatter";
 
 import { PROFILE_PATH } from "../../constants/app.constants";
@@ -31,8 +33,9 @@ const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
                 }
               </td>
               <td>{`${profile.lastName}, ${profile.middleName} ${profile.firstName}`}</td>
-              <td>{profile.nationality}</td>
-              {/* TODO: Display a national flag icon*/}
+              <td>
+                <NationalitiesIcon nationality={profile.nationality} />
+              </td>
               <td>{formatDate(profile.createdDateTime)}</td>
             </tr>
           ))}

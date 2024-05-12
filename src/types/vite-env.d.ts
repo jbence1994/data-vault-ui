@@ -38,6 +38,10 @@ interface MainPageProps extends PageProps {
   applicationName: string;
 }
 
+interface NationalitiesIconProps {
+  nationality: string;
+}
+
 interface ProfileTableProps {
   profiles: Profile[];
 }
