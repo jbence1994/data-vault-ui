@@ -35,6 +35,7 @@ const ALL_PATHS: KeyValuePair<string, string> = {
 
 const NETWORK_ONLY: WatchQueryFetchPolicy = "network-only";
 const PROFILE_PATH: string = "/profile";
+const NOT_AVAILABLE: string = "N/A";
 
 export {
   APPLICATION_NAME,
@@ -45,4 +46,5 @@ export {
   ALL_PATHS,
   NETWORK_ONLY,
   PROFILE_PATH,
+  NOT_AVAILABLE,
 };
