@@ -6,6 +6,8 @@ import Card from "../common/Card";
 
 import PROFILE from "../../graphql/queries/profileQuery";
 
+import { buildFullName, formatGender } from "../../utils/appUtils";
+
 import { NETWORK_ONLY } from "../../constants/app.constants";
 
 import noImage from "../../assets/no-image.png";
@@ -67,11 +69,11 @@ const ProfilePage: React.FC<PageProps> = () => {
 
   return (
     <Card
-      title={`${lastName}, ${middleName} ${firstName}`}
+      title={buildFullName(firstName, middleName, lastName)}
       image={image}
       imageAlt={id}
       contents={[
-        { key: 1, value: `Gender: ${gender ? "Male" : "Female"}` },
+        { key: 1, value: `Gender: ${formatGender(gender)}` },
         { key: 2, value: `Nationality: ${nationality}` },
         { key: 3, value: `Date of birth: ${birthDate}` },
         { key: 4, value: `Place of birth: ${birthPlace}` },
