@@ -10,7 +10,10 @@ import { PROFILE_PATH } from "../../constants/app.constants";
 const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
   return (
     <React.Fragment>
-      <table className="table table-responsive table-hover text-center">
+      <table
+        className="table table-responsive table-hover"
+        style={{ textAlign: "center", verticalAlign: "middle" }}
+      >
         <thead>
           <tr>
             <th>Identifier</th>
