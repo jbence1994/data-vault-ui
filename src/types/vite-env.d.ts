@@ -45,6 +45,11 @@ interface FileInputProps {
   onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
+interface ImageProps {
+  source: string | undefined;
+  imageAlt: string;
+}
+
 interface ModalWindowProps {
   title: string;
   content: string;
@@ -88,6 +93,10 @@ interface MainPageProps extends PageProps {
 interface NationalitiesDropdownProps {
   selectedNationality: string;
   onChange: ChangeEventHandler<HTMLSelectElement>;
+}
+
+interface NationalityImageProps {
+  alpha3Code: string;
 }
 
 interface ProfileTableProps {

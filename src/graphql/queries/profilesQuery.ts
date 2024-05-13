@@ -8,6 +8,7 @@ const PROFILES: DocumentNode = gql`
       firstName
       middleName
       lastName
+      nationality
       createdDateTime
     }
   }
