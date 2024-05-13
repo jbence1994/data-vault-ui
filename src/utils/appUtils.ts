@@ -1,5 +1,8 @@
 import { NOT_AVAILABLE, FEMALE, MALE } from "../constants/app.constants.ts";
 
+import hungarianFlag from "../assets/nationalities/hungary.png";
+import usaFlag from "../assets/nationalities/usa.png";
+
 const buildFullName = (
   firstName: string,
   middleName: string,
@@ -20,4 +23,15 @@ const formatGender = (gender: number): string => {
   return gender ? MALE : FEMALE;
 };
 
-export { buildFullName, formatDate, formatGender };
+const mapNationalityToFlag = (alpha3Code: string): string | undefined => {
+  const nationalityNamesAndFlags: Map<string, string> = new Map<string, string>(
+    [
+      ["HUN", hungarianFlag],
+      ["USA", usaFlag],
+    ],
+  );
+
+  return nationalityNamesAndFlags.get(alpha3Code);
+};
+
+export { buildFullName, formatDate, formatGender, mapNationalityToFlag };
