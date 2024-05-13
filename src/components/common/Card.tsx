@@ -2,6 +2,8 @@ import React from "react";
 
 import FileInput from "./FileInput";
 
+import { NO_PHOTO } from "../../constants/app.constants.ts";
+
 const Card: React.FC<CardProps> = ({
   title,
   image,
@@ -24,7 +26,7 @@ const Card: React.FC<CardProps> = ({
         <img className="card-img-top" src={image} alt={imageAlt} />
         <FileInput
           name={photoUploadName}
-          disabled={!image.includes("no-image")}
+          disabled={!image.includes(NO_PHOTO)}
           onChange={onChange}
         />
       </label>

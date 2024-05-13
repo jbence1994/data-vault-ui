@@ -10,7 +10,7 @@ import { buildFullName, formatGender } from "../../utils/appUtils";
 
 import { NETWORK_ONLY } from "../../constants/app.constants";
 
-import noImage from "../../assets/no-image.png";
+import noPhoto from "../../assets/no-photo.png";
 
 const ProfilePage: React.FC<PageProps> = () => {
   const { id: routeParamId } = useParams();
@@ -64,7 +64,7 @@ const ProfilePage: React.FC<PageProps> = () => {
   if (photo) {
     image = `${process.env.VITE_PHOTO_RETRIEVE_ENDPOINT}/${photo}`;
   } else {
-    image = noImage;
+    image = noPhoto;
   }
 
   return (

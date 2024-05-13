@@ -38,6 +38,7 @@ const PROFILE_PATH: string = "/profile";
 const NOT_AVAILABLE: string = "N/A";
 const MALE: string = "Male";
 const FEMALE: string = "Female";
+const NO_PHOTO: string = "no-photo";
 
 export {
   APPLICATION_NAME,
@@ -51,4 +52,5 @@ export {
   NOT_AVAILABLE,
   MALE,
   FEMALE,
+  NO_PHOTO,
 };
