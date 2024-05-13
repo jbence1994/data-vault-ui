@@ -18,6 +18,11 @@ interface FileInputProps {
   onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
+interface ImageProps {
+  source: string | undefined;
+  imageAlt: string;
+}
+
 interface NavbarProps {
   image: string;
   applicationName: string;
@@ -36,6 +41,10 @@ interface PageProps {
 
 interface MainPageProps extends PageProps {
   applicationName: string;
+}
+
+interface NationalityImageProps {
+  alpha3Code: string;
 }
 
 interface ProfileTableProps {

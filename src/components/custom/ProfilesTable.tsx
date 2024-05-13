@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import NationalityImage from "./NationalityImage.tsx";
+
 import { buildFullName, formatDate } from "../../utils/appUtils";
 
 import { PROFILE_PATH } from "../../constants/app.constants";
@@ -8,11 +10,15 @@ import { PROFILE_PATH } from "../../constants/app.constants";
 const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
   return (
     <React.Fragment>
-      <table className="table table-responsive table-hover text-center">
+      <table
+        className="table table-responsive table-hover"
+        style={{ textAlign: "center", verticalAlign: "middle" }}
+      >
         <thead>
           <tr>
             <th>Identifier</th>
             <th>Full name</th>
+            <th>Nationality</th>
             <th>Created date time</th>
           </tr>
         </thead>
@@ -35,6 +41,9 @@ const ProfilesTable: React.FC<ProfileTableProps> = ({ profiles }) => {
                   profile.middleName,
                   profile.lastName,
                 )}
+              </td>
+              <td>
+                <NationalityImage alpha3Code={profile.nationality} />
               </td>
               <td>{formatDate(profile.createdDateTime)}</td>
             </tr>
